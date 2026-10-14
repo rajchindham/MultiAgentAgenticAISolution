@@ -1,0 +1,6 @@
+[
+  {"id":"maturity-guide","title":"Digital Quality Maturity Scorecard","scope":"maturity","text":"The maturity scorecard combines development artifact and engineering quality KPIs. A missing metric must be displayed as No Data rather than zero. Review the metric's source and refresh date before recommending remediation."},
+  {"id":"quality-guide","title":"Digital Product Quality Scorecard","scope":"product_quality","text":"Current Release Defects and Functional Automation Failure Rate are product quality metrics. A measured value of zero is favorable for both. A missing failure rate with a functional automation count of at least one is represented as zero in the dashboard's merge rule. Keep missing and measured zeros distinct in source records."},
+  {"id":"security-guide","title":"Security KPI definitions","scope":"maturity","text":"Security KPIs include Veracode Scan Coverage %, Policy Pass Rate %, SLA Compliance %, and Critical/High Open Vulns %. Interpret colors using the configured threshold table; do not assume universal cutoffs."},
+  {"id":"sonar-guide","title":"Code coverage lineage","scope":"maturity","text":"SonarQube code coverage can be sourced from QMOMaturityScoreCardSonarQubeCodeCoverage after migration from DEVSonarProductionProjectCoverage and LastAnalyzed. Confirm source freshness before drawing a trend conclusion."}
+]

@@ -1,0 +1,104 @@
+{
+  "status": "ok",
+  "scope": {
+    "portfolio": "Digital Platforms",
+    "application": "Mobile App",
+    "period": "2026-08",
+    "previous_period": "2026-07",
+    "scorecard": "product_quality"
+  },
+  "findings": [
+    {
+      "type": "metric",
+      "metric": "Current Release Defects",
+      "period": "2026-08",
+      "value": 0.0,
+      "unit": "count",
+      "status": "Green",
+      "refreshed_at": "2026-09-01T08:00:00Z",
+      "evidence_ids": [
+        "metric:Mobile App:2026-08:product_quality:Current Release Defects"
+      ]
+    },
+    {
+      "type": "metric",
+      "metric": "Functional Automation Failure Rate",
+      "period": "2026-08",
+      "value": 2.5,
+      "unit": "percent",
+      "status": "Green",
+      "refreshed_at": "2026-09-01T08:00:00Z",
+      "evidence_ids": [
+        "metric:Mobile App:2026-08:product_quality:Functional Automation Failure Rate"
+      ]
+    }
+  ],
+  "observations": [],
+  "recommendations": [
+    {
+      "text": "Review source freshness and approved KPI calculation rules.",
+      "evidence_ids": [
+        "doc:quality-guide"
+      ]
+    }
+  ],
+  "limitations": [
+    "No comparable non-null baseline for Current Release Defects.",
+    "No comparable non-null baseline for Functional Automation Failure Rate.",
+    "Offline demo: original sample data; no LLM request made."
+  ],
+  "sources": [
+    {
+      "id": "doc:quality-guide",
+      "kind": "document",
+      "source": "original-rag/scorecard_docs.json",
+      "payload": {
+        "id": "quality-guide",
+        "title": "Digital Product Quality Scorecard",
+        "scope": "product_quality",
+        "text": "Current Release Defects and Functional Automation Failure Rate are product quality metrics. A measured value of zero is favorable for both. A missing failure rate with a functional automation count of at least one is represented as zero in the dashboard's merge rule. Keep missing and measured zeros distinct in source records."
+      }
+    },
+    {
+      "id": "metric:Mobile App:2026-08:product_quality:Current Release Defects",
+      "kind": "metric",
+      "source": "original-rag/sqlite/metrics",
+      "payload": {
+        "portfolio": "Digital Platforms",
+        "application": "Mobile App",
+        "period": "2026-08",
+        "scorecard": "product_quality",
+        "metric": "Current Release Defects",
+        "value": 0.0,
+        "unit": "count",
+        "status": "Green",
+        "refreshed_at": "2026-09-01T08:00:00Z"
+      }
+    },
+    {
+      "id": "metric:Mobile App:2026-08:product_quality:Functional Automation Failure Rate",
+      "kind": "metric",
+      "source": "original-rag/sqlite/metrics",
+      "payload": {
+        "portfolio": "Digital Platforms",
+        "application": "Mobile App",
+        "period": "2026-08",
+        "scorecard": "product_quality",
+        "metric": "Functional Automation Failure Rate",
+        "value": 2.5,
+        "unit": "percent",
+        "status": "Green",
+        "refreshed_at": "2026-09-01T08:00:00Z"
+      }
+    }
+  ],
+  "trace": [
+    "supervisor:delegate",
+    "dashboard_rag_agent:complete",
+    "metrics_agent:complete",
+    "analysis_agent:complete",
+    "recommendation_agent:complete",
+    "validator:passed",
+    "response:complete"
+  ]
+}
